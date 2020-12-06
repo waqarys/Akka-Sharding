@@ -1,0 +1,17 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="reactivebbq.Orders" transaction-type="RESOURCE_LOCAL">
+        <class>com.reactivebbq.orders.OrderDBO</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/./data/orders-repository"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.c3p0.max_size" value="50"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
